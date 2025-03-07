@@ -1,6 +1,6 @@
 namespace: foo
 helm:
-  chart: redis
-  repo: https://charts.bitnami.com/bitnami
+  # chart: redis
+  repo: oci://registry-1.docker.io/bitnamicharts/redis:20.11.1
   releaseName: redis
-  version: "20.11.1"
+  # version: "20.11.1"
