@@ -3,4 +3,4 @@ helm:
   chart: redis
   repo: https://charts.bitnami.com/bitnami
   releaseName: redis
-  version: 20.11.1
+  version: "20.11.1"
