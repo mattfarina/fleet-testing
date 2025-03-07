@@ -1,6 +1,19 @@
 namespace: foo
 helm:
+  # This commented out configuration does not work. The index for this repo has the URL for the
+  # chart being in an OCI registry. This is valid and works in Helm. But, in this case the error that is
+  # returned is :
+  #
+  # time="2025-03-07T17:58:37Z" level=fatal msg="helm chart download: invalid_reference: invalid tag"
+  #
+  # This is from inside the pod that executes to install the chart.
   # chart: redis
+  # repo: https://charts.bitnami.com/bitnami
+  # releaseName: redis
+  # version: "20.11.1"
+  # ---
+  # The below configuration also fails. This is the direct url to the chart. The correct namespace and
+  # release name are used. But, the chart that is installed is "redis-redis-v0.0.0+git-5a2117a6c2b4"
+  # where the hash is the digest for the commit in this repo. Redis was not installed and did not work.
   repo: oci://registry-1.docker.io/bitnamicharts/redis:20.11.1
   releaseName: redis
-  # version: "20.11.1"
