@@ -15,5 +15,6 @@ helm:
   # The below configuration also fails. This is the direct url to the chart. The correct namespace and
   # release name are used. But, the chart that is installed is "redis-redis-v0.0.0+git-5a2117a6c2b4"
   # where the hash is the digest for the commit in this repo. Redis was not installed and did not work.
-  chart: oci://registry-1.docker.io/bitnamicharts/redis:20.11.1
+  chart: oci://registry-1.docker.io/bitnamicharts/redis
   releaseName: redis
+  version: "20.11.1"
